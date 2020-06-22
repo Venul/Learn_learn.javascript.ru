@@ -1,0 +1,56 @@
+/*Создать расширяемый калькулятор
+
+Создайте функцию конструктор Calculator, которая создаёт «расширяемые» 
+объекты калькулятора. Задание состоит из двух частей.
+
+Во-первых, реализуйте метод calculate(str), который принимает строку 
+типа "1 + 2" в формате «ЧИСЛО оператор ЧИСЛО» (разделено пробелами) и 
+возвращает результат. Метод должен понимать плюс + и минус -.
+*/
+
+function Calculator () {
+  this.calculate = function (str) {
+    let arr = str.split(' ')
+
+    this.first = +arr[0]
+    this.operator = arr[1]
+    this.second = +arr[2]
+
+    if (this.operator === '+') {
+      return this.first + this.second
+    } else if (this.operator === '-') {
+      return this.first - this.second
+    } else {
+      return alert('error')
+    }
+  }
+}
+
+// не мой кусок. Разобраться позже
+
+
+function Calculator() {
+
+    this.methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b
+    };
+  
+    this.calculate = function(str) {
+  
+      let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2]
+  
+      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+        return NaN;
+      }
+  
+      return this.methods[op](a, b);
+    }
+  
+    this.addMethod = function(name, func) {
+      this.methods[name] = func;
+    };
+  }
