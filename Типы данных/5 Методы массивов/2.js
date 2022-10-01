@@ -9,6 +9,16 @@ let filterRange = (arr, a, b) => {
     return str;
 }
 
+function filterRange(arr, min, max) {
+    const newArr = [];
+    for (let key in arr) {
+      if(arr[key]>=min && arr[key] <=max) newArr.push(arr[key]);
+    }
+  
+    return newArr;
+  
+  }
+
 
 function filterRange(arr, a, b) {
     return arr.filter(item => item >= a && item <= b);

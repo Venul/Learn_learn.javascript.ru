@@ -8,19 +8,21 @@ let masha = { name: 'Маша', surname: 'Петрова', id: 3 }
 
 let users = [vasya, petya, masha]
 
-let usersMapped = users.map(item => {
+//old
+let usersMapped = [];
+for (let i=0; i<users.length; i++) {
+  usersMapped[i] = {};
+  usersMapped[i].fullName = users[i].name + " " + users[i].surname;
+  usersMapped[i].id = users[i].id;
+}
+
+// new
+usersMapped = users.map(item => {
   return { 
       fullname: item.name + ' ' + item.surname, 
-      // fullName: `${user.name} ${user.surname}`,
+      // fullName: `${user.name} ${user.surname}`, //book
       id: item.id 
   }
 })
-
-// let usersMapped = [];
-// for (let i=0; i<users.length; i++) {
-//   usersMapped[i] = {};
-//   usersMapped[i].fullName = users[i].name + " " + users[i].surname;
-//   usersMapped[i].id = users[i].id;
-// }
 
 console.log(usersMapped)

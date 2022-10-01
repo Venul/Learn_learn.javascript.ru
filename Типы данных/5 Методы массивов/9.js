@@ -10,8 +10,9 @@ let arr = [ vasya, petya, masha ];
 
 let sortByAge = (arr) => {
     arr.sort( (a, b) => a.age - b.age );
-    // arr.sort((a, b) => a.age > b.age ? 1 : -1);
+    // arr.sort((a, b) => a.age > b.age ? 1 : -1);    --book
 }
+
 sortByAge(arr);
 
 console.log(arr[0].name); // Вася

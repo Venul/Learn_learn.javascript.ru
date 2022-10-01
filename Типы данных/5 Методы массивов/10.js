@@ -7,6 +7,7 @@
 
 let array = [1, 2, 3];
 
+//old
 function shuffle (arr) {
   let newArr = [];
   let getRand;
@@ -26,22 +27,31 @@ function randomInteger (min, max) {
   return Math.floor(rand);
 }
 
+//new
+// второй массив не нужен, решил также как раньше
+function shuffle(array) {
+  let min = 0;
+  let max = array.length-1;
+  
+    let newArr2 = [];
+    let newArr = [];
+  
+    for (let i = 0; i<array.length; i++) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    let randElem = Math.round(rand);
+    if (newArr2.includes(randElem)) {
+      i--;
+      continue;
+    }
+      newArr.push(array[randElem]);
+      newArr2.push(randElem);
+    }
+    return newArr;
+  }
+
 console.log(shuffle(array));
 
 // Мое решение работает правильно
-
-//=============================================================
-
-// Простым решением может быть:
-
-function shuffle(array) {
-  array.sort(() => Math.random() - 0.5);
-}
-
-let arr = [1, 2, 3];
-shuffle(arr);
-alert(arr);
-// При нем не корректрое рапределение результатов
 
 //=============================================================
 
