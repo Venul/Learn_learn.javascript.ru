@@ -8,6 +8,7 @@
 возвращает результат. Метод должен понимать плюс + и минус -.
 */
 
+//old
 function Calculator () {
   this.calculate = function (str) {
     let arr = str.split(' ')
@@ -26,9 +27,7 @@ function Calculator () {
   }
 }
 
-// не мой кусок. Разобраться позже
-
-
+// book
 function Calculator() {
 
     this.methods = {

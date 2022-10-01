@@ -8,8 +8,9 @@ let masha = { name: "Маша", age: 28 };
 
 let arr = [ vasya, petya, masha ];
 
+//old new
 let sortByAge = (arr) => {
-    arr.sort( (a, b) => a.age - b.age );
+    arr.sort((a, b) => a.age - b.age );
     // arr.sort((a, b) => a.age > b.age ? 1 : -1);    --book
 }
 

@@ -1,6 +1,7 @@
 // Напишите функцию camelize(str), которая преобразует строки вида 
 // «my-short-string» в «myShortString».
 
+//old
 function camelize(str) {
   let arr = str.split('-');
   //массив, убрали разделитель
@@ -12,9 +13,9 @@ function camelize(str) {
 // склеили
 }
 
+//new
 function camelize (str) {
   const arr = str.split('');
-  
   let findKey = arr.findIndex(item => item ==='-')
   
   while ( findKey != -1) {
@@ -24,8 +25,9 @@ function camelize (str) {
   }
   
   return console.log(arr.join(''))
-
 }
+
+//book
 // .split('-') // разбивает 'my-long-word' на массив ['my', 'long', 'word']
 // .map(
 //   // Переводит в верхний регистр первые буквы всех элементом массива за исключением первого
