@@ -1,9 +1,11 @@
-let arrayLike = {
-  0: "Hello",
-  1: "World",
-  length: 2
-};
+let map = new Map();
 
-let arr = Array.from(arrayLike); // (*)
+map.set("name", "John");
 
-console.log(arr)
+let keys = Array.from(map.keys());
+
+// Error: keys.push is not a function
+// Ошибка: keys.push -- это не функция
+keys.push("more");
+
+console.log(keys)

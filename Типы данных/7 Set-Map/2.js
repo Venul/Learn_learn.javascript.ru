@@ -59,3 +59,21 @@ function aclean(arr) {
 
   return Array.from(map.values());
 }
+
+//new рабочее
+function aclean (arr) {
+  let set = new Set();
+const res = [];
+  for (let key in arr) {
+    let newArr = arr[key].split('');
+    newArr.sort();
+    let ss = newArr.join('').toLowerCase();
+    
+    if (!set.has(ss)) {
+      set.add(ss);
+      res.push(arr[key]);
+    }
+  }
+
+  return res;
+}
