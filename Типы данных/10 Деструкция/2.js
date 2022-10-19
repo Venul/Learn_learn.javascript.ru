@@ -19,7 +19,7 @@ function topSalary(salaries) {
 }
 
 
-
+// old
 function topSalary(salaries) {
   let mostSalary = 0;
   let namePerson;
@@ -27,7 +27,23 @@ function topSalary(salaries) {
     if (value > mostSalary) {
       mostSalary = value;
       namePerson = key;
-    } // name:John, затем age:30
+    } 
   }
   return namePerson || null;
+}
+
+// new
+function topSalary(salaries) {
+  if (Object.keys(salaries).length < 1) return null;
+  let maxName,
+      maxSalary = 0;
+
+  for (let [name, salary] of Object.entries(salaries)) {
+    console.log (name, salary)
+      if (maxSalary < salary) {
+        maxSalary = salary;
+        maxName = name;
+      }
+  }
+  return maxName;
 }
