@@ -5,7 +5,7 @@
 // month – месяц от 0 до 11.
 // К примеру, getLastDayOfMonth(2012, 1) = 29(високосный год, февраль).
 
-
+//old
 function getLastDayOfMonth(year, month) {
   const resDate = new Date(year, month);
   resDate.setMonth(month + 1);
@@ -15,6 +15,14 @@ function getLastDayOfMonth(year, month) {
   return resDate.getDate();
 }
 
+//new
+function getLastDayOfMonth(year, mth) {
+  let newDate = new Date(year,mth+1,1);
+    newDate.setDate(newDate.getDate() - 1);
+  return newDate.getDate();
+}
+
+//book
 function getLastDayOfMonth(year, month) {
   let date = new Date(year, month + 1, 0);
   return date.getDate();

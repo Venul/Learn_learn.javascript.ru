@@ -10,4 +10,4 @@ function getDateAgo(date, days) {
   // сперва нужно засетить значение, для корректной работы
   return newDate.getDate();
 }
-
+ 

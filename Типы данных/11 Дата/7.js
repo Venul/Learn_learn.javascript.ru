@@ -4,6 +4,7 @@
 // getSecondsToTomorrow() == 3600
 // P.S.Функция должна работать в любой день, т.е.в ней не должно быть конкретного значения сегодняшней даты.
 
+//old
 function getSecondsToTomorrow() {
   let date = new Date();
   date.setDate(date.getDate() + 1);
@@ -17,6 +18,16 @@ function getSecondsToTomorrow() {
   return res;
 }
 
+//new
+function getSecondsToTomorrow() {
+  const oldDate = new Date();
+    let curDate = new Date();
+    curDate.setDate(oldDate.getDate()+1);
+    curDate.setHours(0,0,0);
+    return Math.floor((curDate-oldDate)/1000)
+}
+
+//book
 function getSecondsToTomorrow() {
   let now = new Date();
 
