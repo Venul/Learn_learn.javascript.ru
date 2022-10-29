@@ -37,6 +37,26 @@ function printList(list) {
   }
 }
 
+//new
+
+function printList2(list) {
+  let lt = list;
+  while (lt) {
+    console.log(lt.value);
+    lt = lt.next;
+  }
+}
+
+function printList3(lt) {
+  console.log(lt.value);
+  if (lt.next) {
+    printList3(lt.next);
+  }
+}
+
+
+
+
 let list = {
   value: 1,
   next: {

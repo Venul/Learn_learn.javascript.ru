@@ -7,15 +7,22 @@ function sum(n) {
   return res;
 }
 
+//old
 function sum2(n) {
   return n==1 ? n : sum2(n-1)+n;
 }
 
-function sum3(n) {
- return (n*(n+1))/2;
+//new
+function sumTo2(n) {
+  let sum = 0;
+  if (n > 1) {
+    sum += n + sumTo2(n - 1)
+  } else {
+    sum = n;
+  }
+  return sum;
 }
 
-
-console.log(sum(10000));
-console.log(sum2(10000));
-console.log(sum3(10000));
+function sumTo3(n) {
+  return (1 + n) / 2 * n;
+}

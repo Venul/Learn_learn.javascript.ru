@@ -1,3 +1,4 @@
+//book
 function printReverseList(list) {
   let arr = [];
   let tmp = list;
@@ -20,6 +21,30 @@ function printReverseList2(list) {
 
   alert(list.value);
 }
+
+//new
+function printList4(list) {
+  let lt = list;
+  const arr = [];
+  while (lt) {
+    arr.push(lt.value);
+    lt = lt.next;
+  }
+  arr.reverse().map(item => alert(item))
+}
+
+
+function printList5(lt) {
+  if (lt.next) {
+    printList5(lt.next);
+  }
+  alert(lt.value);
+}
+
+
+
+
+
 
 let list = {
   value: 1,

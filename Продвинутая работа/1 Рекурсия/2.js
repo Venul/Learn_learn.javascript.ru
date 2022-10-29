@@ -4,4 +4,8 @@ function f(n) {
   // return n ? n * factorial(n - 1) : 1;
 }
 
-console.log(f(1))
+//new
+function factorial(n) {
+  if (n == 1) return 1;
+  return n * factorial(n - 1);
+}
