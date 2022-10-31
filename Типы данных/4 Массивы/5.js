@@ -18,6 +18,12 @@ function getMaxSubSum(arr) {
   return max;
 }
 
+//book
+for (let item of arr) { // для каждого элемента массива
+  partialSum += item; // добавляем значение элемента к partialSum
+  maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
+  if (partialSum < 0) partialSum = 0; // ноль если отрицательное
+}
 
 
 getMaxSubSum([-1, 2, 3, -9, 11])

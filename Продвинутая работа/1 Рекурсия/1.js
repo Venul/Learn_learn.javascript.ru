@@ -1,4 +1,27 @@
 // Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+
+//old
+function sumTo(arg) {
+  let result = 0;
+  for (let i=0; i<=arg; i++) {
+      result +=i;
+  }
+  return result;
+}
+
+function sumTo2(arg) {
+  if (arg != 1) {
+      return arg + sumTo2(arg-1);
+  } else {
+      return arg;
+  }
+}
+
+function sumTo3(arg) {
+  return (arg*(arg+1))/2;
+}
+
+//book
 function sum(n) {
   let res = 0;
   for (let i=0; i<=n; i++) {
@@ -7,7 +30,6 @@ function sum(n) {
   return res;
 }
 
-//old
 function sum2(n) {
   return n==1 ? n : sum2(n-1)+n;
 }

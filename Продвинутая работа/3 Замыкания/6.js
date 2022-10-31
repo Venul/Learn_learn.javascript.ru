@@ -21,6 +21,7 @@ users.sort((a, b) => a.age > b.age ? 1 : -1);
 
 // Напишите функцию byField, которая может быть использована для этого.
 
+//old
 function byField(val) {
   return function (x, y) {
     return x[val] > y[val] ? 1 : -1;
@@ -28,3 +29,16 @@ function byField(val) {
 }
 
 users.forEach(user => alert(user.name));
+
+//new
+function byField(x) {
+  return function (a,b) {
+    return a[x] > b[x] ? 1 : -1;
+  }
+}
+console.log(users.sort(byField('age')))
+
+//book
+function byField(field) {
+  return (a, b) => a[field] > b[field] ? 1 : -1;
+}

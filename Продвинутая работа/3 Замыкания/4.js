@@ -4,6 +4,7 @@
 // sum(1)(2) = 3
 // sum(5)(-1) = 4
 
+//book
 function sum(a) {
   return function(b) {
     return console.log(a + b); // берёт "a" из внешнего лексического окружения
